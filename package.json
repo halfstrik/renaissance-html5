@@ -1,0 +1,35 @@
+{
+  "name": "ultima.online.renaissance.html5",
+  "version": "0.0.1",
+  "description": "Emulation of the old and cool Ultima Online game",
+  "homepage": "https://github.com/halfstrik/ultima-online-renaissance-html5",
+  "keywords": [
+    "game"
+  ],
+  "author": {
+    "name": "Sergey Petrunin",
+    "email": "halfstrik@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/halfstrik/ultima-online-renaissance-html5.git"
+  },
+  "dependencies": {
+    "socket.io": "0.9.13"
+  },
+  "devDependencies": {
+  },
+  "optionalDependencies": {
+  },
+  "main": "index",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "readme": "Game Ultime",
+  "readmeFilename": "README.md",
+  "_id": "ultima.online.renaissance.html5@0.0.1",
+  "_from": "ultima.online.renaissance.html5@"
+}

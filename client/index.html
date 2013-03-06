@@ -9,12 +9,29 @@
 <script>
     /*global io*/
     var socket = io.connect('http://localhost');
-    socket.on('greetings', function (data) {
+    socket.on('greetings', function (greetings) {
         'use strict';
-        console.log(data);
+        console.log('greetings');
+        console.log(greetings);
         setTimeout(function () {
+            console.log('disconnecting');
             socket.disconnect();
-        }, 5000);
+        }, 60000);
+    });
+    socket.on('playersList', function (playersList) {
+        'use strict';
+        console.log('playersList');
+        console.log(playersList);
+    });
+    socket.on('joinPlayer', function (joinPlayer) {
+        'use strict';
+        console.log('joinPlayer');
+        console.log(joinPlayer);
+    });
+    socket.on('leavePlayer', function (leavePlayer) {
+        'use strict';
+        console.log('leavePlayer');
+        console.log(leavePlayer);
     });
 </script>
 </body>

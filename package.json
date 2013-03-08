@@ -18,7 +18,8 @@
     "socket.io": "0.9.13"
   },
   "devDependencies": {
-    "nodeunit": "0.7.4"
+    "nodeunit": "0.7.4",
+    "jasmine-node": "1.2.3"
   },
   "optionalDependencies": {
   },

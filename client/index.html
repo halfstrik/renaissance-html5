@@ -9,30 +9,36 @@
 <script>
     /*global io*/
     var socket = io.connect('http://localhost');
-    socket.on('greetings', function (greetings) {
+    socket.on('about', function (about) {
         'use strict';
-        console.log('greetings');
-        console.log(greetings);
-        setTimeout(function () {
-            console.log('disconnecting');
-            socket.disconnect();
-        }, 60000);
+        console.dir(about);
     });
-    socket.on('playersList', function (playersList) {
+    socket.on('account', function (accountRequirements) {
         'use strict';
-        console.log('playersList');
-        console.log(playersList);
+        console.dir(accountRequirements);
+        socket.emit('account', {username: 'user_' + Date.now()});
+        socket.on('success', function (info) {
+            console.dir(info);
+        });
+        socket.on('error', function (error) {
+            console.dir(error);
+        });
     });
-    socket.on('joinPlayer', function (joinPlayer) {
+    socket.on('loggedIn', function (joinPlayer) {
         'use strict';
         console.log('joinPlayer');
-        console.log(joinPlayer);
+        console.dir(joinPlayer);
     });
-    socket.on('leavePlayer', function (leavePlayer) {
+    socket.on('loggedOut', function (leavePlayer) {
         'use strict';
         console.log('leavePlayer');
-        console.log(leavePlayer);
+        console.dir(leavePlayer);
     });
+
+    setTimeout(function () {
+        console.log('disconnecting after 2 minutes');
+        socket.disconnect();
+    }, 120000);
 </script>
 </body>
 </html>

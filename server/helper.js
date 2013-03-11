@@ -1,14 +1,25 @@
-exports.getNewPlayer = (function () {
+exports.player = function (username) {
     'use strict';
-    var i = 0;
-    return function () {
-        i += 1;
-        return {
-            nickname: "user_" + String(i),
-            str: 45,
-            sex: 'man',
-            x: 0,
-            y: 0
-        };
+    var that = this;
+    this.username = username;
+    this.sex = 'man';
+    this.position = {x: 0, y: 0 };
+    this.goldAmount = 0;
+    return {
+        getPrivateData: function () {
+            return {
+                username: that.username,
+                sex: that.sex,
+                position: that.position,
+                goldAmount: that.goldAmount
+            };
+        },
+        getPublicData: function () {
+            return {
+                username: that.username,
+                sex: that.sex,
+                position: that.position
+            };
+        }
     };
-}());
+};

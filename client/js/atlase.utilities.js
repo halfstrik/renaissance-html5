@@ -1,14 +1,16 @@
-/*global IMAGE_UTILITIES*/
-var IMAGE_UTILITIES = IMAGE_UTILITIES || (function () {
+/*global ATLASE_UTILITIES*/
+var ATLASE_UTILITIES = ATLASE_UTILITIES || (function () {
     "use strict";
     var spriteSheets = {};
 
     return {
-        getSpriteSheetImage: function (spriteSheetJsonFileName) {
+        loadSpriteSheetImage: function (spriteSheetJsonFileName, callback) {
             var jsonRequest,
-                parsedJson;
+                parsedJson,
+                restArguments;
             if (spriteSheets.hasOwnProperty(spriteSheetJsonFileName)) {
-                return spriteSheets[spriteSheetJsonFileName].image;
+                restArguments = Array.prototype.slice.call(arguments, 2);
+                callback.apply(null, restArguments);
             }
             spriteSheets[spriteSheetJsonFileName] = {};
             jsonRequest = new XMLHttpRequest();
@@ -19,11 +21,6 @@ var IMAGE_UTILITIES = IMAGE_UTILITIES || (function () {
                     frameInSprite,
                     image;
                 parsedJson = JSON.parse(this.responseText);
-                image = new Image();
-                image.onload = function () {
-                    spriteSheets[spriteSheetJsonFileName].image = image;
-                };
-                image.src = parsedJson.meta.image;
                 spriteSheets[spriteSheetJsonFileName].sprites = [];
                 for (frameName in parsedJson.frames) {
                     if (parsedJson.frames.hasOwnProperty(frameName)) {
@@ -39,23 +36,27 @@ var IMAGE_UTILITIES = IMAGE_UTILITIES || (function () {
                         });
                     }
                 }
+                image = new Image();
+                image.onload = function () {
+                    spriteSheets[spriteSheetJsonFileName].image = image;
+                    restArguments = Array.prototype.slice.call(arguments, 2);
+                    callback.apply(null, restArguments);
+                };
+                image.src = parsedJson.meta.image;
             };
             jsonRequest.send();
         },
-        getImageObject: function (spriteSheetJsonFileName, imageName) {
+        drawImageFromAtlas: function (spriteSheetJsonFileName, imageName, context, dx, dy) {
             var sprite,
-                image = this.getSpriteSheetImage(spriteSheetJsonFileName),
                 i,
-                spritesArray,
-                spritesArrayLength;
-            if (image) {
-                spritesArray = spriteSheets[spriteSheetJsonFileName].sprites;
-                spritesArrayLength = spritesArray.length;
-                for (i = 0; i < spritesArrayLength; i += 1) {
-                    sprite = spritesArray[i];
-                    if (sprite.id === imageName) {
-                        return sprite;
-                    }
+                spritesArray = spriteSheets[spriteSheetJsonFileName].sprites,
+                spritesArrayLength = spritesArray.length,
+                image = spriteSheets[spriteSheetJsonFileName].image;
+            for (i = 0; i < spritesArrayLength; i += 1) {
+                sprite = spritesArray[i];
+                if (sprite.id === imageName) {
+                    context.drawImage(image, sprite.x, sprite.y, sprite.w, sprite.h,
+                        dx - sprite.w * 0.5, dy - sprite.h * 0.5, sprite.w, sprite.h);
                 }
             }
         }

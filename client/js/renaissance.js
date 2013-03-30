@@ -1,15 +1,14 @@
-/*global IMAGE_UTILITIES*/
+/*global ATLASE_UTILITIES*/
 (function () {
     "use strict";
     var canvas,
         context;
     canvas = document.getElementById("game_canvas");
     context = canvas.getContext('2d');
-    IMAGE_UTILITIES.getSpriteSheetImage('img/land/land.json');
-    setTimeout(function () {
-        var imageObject = IMAGE_UTILITIES.getImageObject('img/land/land.json', '5.png'),
-            image = IMAGE_UTILITIES.getSpriteSheetImage('img/land/land.json');
-        context.drawImage(image, imageObject.x, imageObject.y, imageObject.w, imageObject.h,
-            400 - imageObject.w * 0.5, 300 - imageObject.h * 0.5, imageObject.w, imageObject.h);
-    }, 2000);
+    ATLASE_UTILITIES.loadSpriteSheetImage('img/land/land.json', function () {
+        ATLASE_UTILITIES.drawImageFromAtlas('img/land/land.json', '5.png', context, 400, 300);
+        ATLASE_UTILITIES.drawImageFromAtlas('img/land/land.json', '5.png', context, 444, 300);
+        ATLASE_UTILITIES.drawImageFromAtlas('img/land/land.json', '1.png', context, 422, 278);
+        ATLASE_UTILITIES.drawImageFromAtlas('img/land/land.json', '0.png', context, 422, 322);
+    });
 }());

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="10" height="10" tilewidth="44" tileheight="44">
+ <tileset firstgid="1" name="land" tilewidth="44" tileheight="44">
+  <image source="../texpack/land/land.png" width="2024" height="1672"/>
+ </tileset>
+ <layer name="landLayer" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYALiOhwYBpjxqAFhSxaIOnegQk9m/OoUgbQXUI0HEerw2UlLdQwkqMOnFhYuDATUwgAAzqMk3Q==
+  </data>
+ </layer>
+</map>

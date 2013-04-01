@@ -24,6 +24,15 @@ UO.spriteSheetUtilities = UO.spriteSheetUtilities || (function () {
                     }
                 }
             };
+        },
+        relativeCoordinateCalculator = function (startTileX, startTileY, startX, startY) {
+            return function (tileX, tileY) {
+                var x = startX + Math.floor((tileX - startTileX) * worldData.tilewidth / 2) -
+                        Math.floor((tileY - startTileY) * worldData.tilewidth / 2),
+                    y = startY + Math.floor((tileX - startTileX) * worldData.tileheight / 2) +
+                        Math.floor((tileY - startTileY) * worldData.tileheight / 2);
+                return [x, y];
+            };
         };
 
     return {
@@ -85,6 +94,22 @@ UO.spriteSheetUtilities = UO.spriteSheetUtilities || (function () {
                 for (j = 0; j < totalNumberOfTileSets; j += 1) {
                     if (worldData.arrayOfTileSets[j].isImageInTileSet(imageNumber)) {
                         worldData.arrayOfTileSets[j].drawImageOnCanvas(context, dx, dy, imageNumber);
+                    }
+                }
+            }
+        },
+        drawEntireWorld: function (context, startTileX, startTileY, startX, startY) {
+            var i, tileX, tileY,
+                currentLayer,
+                calculator = relativeCoordinateCalculator(startTileX, startTileY, startX, startY),
+                numberOfLayers = worldData.layers.length,
+                pairXY;
+            for (i = 0; i < numberOfLayers; i += 1) {
+                currentLayer = worldData.layers[i];
+                for (tileX = 0; tileX < worldData.width; tileX += 1) {
+                    for (tileY = 0; tileY < worldData.height; tileY += 1) {
+                        pairXY = calculator(tileX, tileY);
+                        this.drawImageByTileCoordinates(context, pairXY[0], pairXY[1], tileX, tileY);
                     }
                 }
             }

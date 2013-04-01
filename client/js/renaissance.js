@@ -1,11 +1,11 @@
-/*global ATLASE_UTILITIES*/
+/*global UO*/
 (function () {
     "use strict";
     var canvas,
         context;
     canvas = document.getElementById("game_canvas");
     context = canvas.getContext('2d');
-    ATLASE_UTILITIES.loadWorldStaticData('json/world.json', function () {
-        console.log('ALL IMAGES LOADED, context: ', context);
+    UO.spriteSheetUtilities.loadWorldStaticData('json/world.json', function () {
+        UO.spriteSheetUtilities.drawImageByTileCoordinates(context, 0, 0, 8, 6);
     });
 }());

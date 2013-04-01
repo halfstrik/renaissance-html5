@@ -5,7 +5,7 @@
  </tileset>
  <layer name="landLayer" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjZGBgYALiOhwYBpjxqAFhSxaIOnegQk9m/OoUgbQXUI0HEerw2UlLdQwkqMOnFhYuDATUwgAAzqMk3Q==
+   eJxjZGBgYAJiPSCuw4JhQB+IY3GoAWFLFog6d2YGBk9m/OoUgbQXUI0HEepwydNaHQMJ6vCphYULAwG1MAAAZB8kmA==
   </data>
  </layer>
 </map>

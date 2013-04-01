@@ -3,26 +3,23 @@ var UO = UO || {};
 UO.spriteSheetUtilities = UO.spriteSheetUtilities || (function () {
     "use strict";
     var worldData,
-        layerBuilder = function (data, height, width) {
+        layerBuilder = function (data, width) {
             return {
                 getImageNumber: function (tileX, tileY) {
-                    if (tileX < 0 || tileX > height || tileY < 0 || tileY > width) {
-                        throw {message: 'Tile coordinats must be within layer dimensions'};
-                    }
                     return data[tileX + width * tileY];
                 }
             };
         },
         tileSetBuilder = function (image, firstgid, imageheight, imagewidth, tileheight, tilewidth) {
-            var lastgid = (imageheight / tileheight) * (imagewidth / tilewidth) + firstgid;
+            var lastgid = Math.floor(imageheight / tileheight) * Math.floor(imagewidth / tilewidth) + firstgid;
             return {
                 isImageInTileSet: function (imageNumber) {
                     return imageNumber >= firstgid && imageNumber <= lastgid;
                 },
                 drawImageOnCanvas: function (context, dx, dy, imageNumber) {
                     if (imageNumber !== 0) {
-                        var sx = ((imageNumber - firstgid) * tileheight) % imagewidth,
-                            sy = tilewidth * (Math.floor(((imageNumber - firstgid) * tileheight) / imagewidth));
+                        var sx = ((imageNumber - firstgid) * tilewidth) % imagewidth,
+                            sy = tileheight * Math.floor(((imageNumber - firstgid) * tilewidth) / imagewidth);
                         context.drawImage(image, sx, sy, tileheight, tileheight, dx, dy, tileheight, tilewidth);
                     }
                 }

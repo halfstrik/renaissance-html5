@@ -67,6 +67,8 @@ UO.spriteSheetUtilities = UO.spriteSheetUtilities || (function () {
                 worldData.width = parsedJson.width;
                 worldData.tileheight = parsedJson.tileheight;
                 worldData.tilewidth = parsedJson.tilewidth;
+                worldData.halfTileHeigth = 0.5 * parsedJson.tileheight;
+                worldData.halfTileWidth = 0.5 * parsedJson.tilewidth;
                 totalNumberOfLayers = parsedJson.layers.length;
                 worldData.layers = [];
                 for (i = 0; i < totalNumberOfLayers; i += 1) {
@@ -101,7 +103,8 @@ UO.spriteSheetUtilities = UO.spriteSheetUtilities || (function () {
         drawEntireWorld: function (context, startTileX, startTileY, startX, startY) {
             var i, tileX, tileY,
                 currentLayer,
-                calculator = relativeCoordinateCalculator(startTileX, startTileY, startX, startY),
+                calculator = relativeCoordinateCalculator(startTileX, startTileY,
+                    startX - worldData.halfTileWidth, startY - worldData.halfTileHeigth),
                 numberOfLayers = worldData.layers.length,
                 pairXY;
             for (i = 0; i < numberOfLayers; i += 1) {

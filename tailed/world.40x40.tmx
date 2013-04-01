@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="40" height="40" tilewidth="44" tileheight="44">
+ <tileset firstgid="1" name="land" tilewidth="44" tileheight="44">
+  <image source="../texpack/land/land.png" width="3300" height="1012"/>
+ </tileset>
+ <layer name="LandLayer" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzF2F1Kw0AQB/CYpKHH8UEQP2qLoGdQfPECPnqOQqAtlB6jPoimKAgewPsUd8kuHceZ3dlNtn34Y0xS99eZ3WxwW2bZ9oC5L3ZpsizbmDQmqca9K+i4fB/Z/6R0Sc3Qt0FJYVvlbUI+A3vcJOhvjM3Vaxvqvit1/tyRy4K26eNYG2elrt2o819MJirjgp5r2LbsySr1UTb7Gaqv2pfCSPlCbSlrSPlugYd6drhi/V3WjtSHazfN22CDz9TF6fPBe6fEONZc5/Q8tOaqbLNPH7TV4Br22eOqDHeOlOECZczsW5RP/6zReVjDVU6v7dh6utYF9MHjmqnh0rNGuhhdPttX2NslEenaCDVyzxTog3Xjaij1hRpdPm5NYO8hfNg6N5kZwyz/m0P5rGsKfDhzoS/0meOyzUHN4Dl7TPlcxtD1y72rUy5XfL7Y50rouwCOb/+N2T9ifNL3Anh/xfRnpHJqEtNbLu9H8u9SMeNo20TlwaSv3mqb1Gf7So11ZlyLQZs+ahfikviszedLUTfowz1O5Qu1UTW0/ZL4+uitpK5Uj6U+aQ2gYWjGHKJYK7yXeualqB+2wHG1x/p8tQvxcTXEFmps/TvcE4ZMX6W+p5IOVUNqLDjXuDpR4XpG+fJBG87YdQ92fTc8n7Dvu2yzVvn01NL3v1DfHJXMdex7KXb5UdcalTeVV+Bz/d0+ovfccbnbe6HvsWqDnWtg7NJTV19hza4JG/RRzhN1/3O1Hx92cT7oPO7okxpdvl+4Uwwu
+  </data>
+ </layer>
+</map>

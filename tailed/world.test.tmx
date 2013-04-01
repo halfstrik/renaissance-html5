@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="1" height="1" tilewidth="44" tileheight="44">
+ <tileset firstgid="1" name="land.test" tilewidth="44" tileheight="44">
+  <image source="../texpack/landtest/land.test.png" width="132" height="44"/>
+ </tileset>
+ <tileset firstgid="4" name="static.test" tilewidth="125" tileheight="176">
+  <tileoffset x="-42" y="0"/>
+  <image source="../texpack/statictest/static.test.png" width="125" height="528"/>
+ </tileset>
+ <layer name="LandLayer" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgAAAACAAC
+  </data>
+ </layer>
+ <layer name="StaticLayer" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjYWBgAAAAFAAF
+  </data>
+ </layer>
+</map>

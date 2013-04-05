@@ -1,0 +1,76 @@
+{"frames": {
+
+"ManStandDown.png":
+{
+	"frame": {"x":2,"y":2,"w":30,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":70},
+	"sourceSize": {"w":30,"h":70}
+},
+"ManStandDownLeft.png":
+{
+	"frame": {"x":34,"y":2,"w":30,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":70},
+	"sourceSize": {"w":30,"h":70}
+},
+"ManStandDownRight.png":
+{
+	"frame": {"x":66,"y":2,"w":30,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":70},
+	"sourceSize": {"w":30,"h":70}
+},
+"ManStandLeft.png":
+{
+	"frame": {"x":98,"y":2,"w":30,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":70},
+	"sourceSize": {"w":30,"h":70}
+},
+"ManStandRight.png":
+{
+	"frame": {"x":130,"y":2,"w":30,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":70},
+	"sourceSize": {"w":30,"h":70}
+},
+"ManStandUp.png":
+{
+	"frame": {"x":162,"y":2,"w":30,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":70},
+	"sourceSize": {"w":30,"h":70}
+},
+"ManStandUpLeft.png":
+{
+	"frame": {"x":194,"y":2,"w":30,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":70},
+	"sourceSize": {"w":30,"h":70}
+},
+"ManStandUpRight.png":
+{
+	"frame": {"x":226,"y":2,"w":30,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":70},
+	"sourceSize": {"w":30,"h":70}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "img/ManStand.png",
+	"format": "RGBA8888",
+	"size": {"w":258,"h":74},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:c3f92567aef0fb3f7a6cea66a59ef1b1$"
+}
+}
